@@ -3,7 +3,8 @@ package com.noumenon;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import org.junit.jupiter.api.Assertions;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class FizzBuzzStepdefs {
 
@@ -20,13 +21,8 @@ public class FizzBuzzStepdefs {
         result = fizzBuzz.play(number);
     }
 
-//    @Then("^The result was Fizz$")
-//    public void theResultWasFizz() {
-//        Assertions.assertEquals("Fizz", result);
-//    }
-
     @Then("^The result is \"([^\"]*)\"$")
     public void theResultIs(String expected) throws Throwable {
-        Assertions.assertEquals(expected, result);
+        assertEquals(expected, result);
     }
 }
